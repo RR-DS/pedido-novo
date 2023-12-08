@@ -8,25 +8,25 @@ class Cliente {
   String cpf;
   //int idade;
 
-  Cliente(this.id, this.nome, this.cpf, this.sobrenome);
-  Cliente.novo(this.nome, this.cpf, this.sobrenome);
+  Cliente(this.id, this.nome, this.sobrenome, this.cpf);
+  Cliente.novo(this.nome, this.sobrenome, this.cpf);
 
   Map<String, dynamic> toMap() {
     return {
-      'cliente_id': this.id,
-      'cliente_nome': this.nome,
-      'cliente_sobrenome': this.sobrenome,
-      'cliente_cpf': this.cpf,
+      'id': this.id,
+      'nome': this.nome,
+      'sobrenome': this.sobrenome,
+      'cpf': this.cpf,
       //'boi_idade': this.idade
     };
   }
 
   static Cliente fromMap(Map<String, dynamic> map) {
     return Cliente(
-      map['boi_id'],
-      map['boi_nome'],
-      map['boi_sobrenome'],
-      map['boi_cpf'],
+      map['id'],
+      map['nome'],
+      map['sobrenome'],
+      map['cpf'],
     ); //id, nome, cpf)
   }
 

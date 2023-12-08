@@ -29,6 +29,7 @@ class ClienteRest {
 
   //BOI_REST.DART (4)
   Future<Cliente> inserir(Cliente cliente) async {
+    cliente.id = -1;
     final http.Response response =
         await http.post(Uri.http(Api.endpoint, 'clientes'),
             headers: <String, String>{

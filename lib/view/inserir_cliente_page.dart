@@ -54,8 +54,9 @@ class _InserirClienteState extends State<InserirClientePage> {
 
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Cliente salvo com sucesso')));
-    } catch (exception) {
+    } catch (exception, s) {
       showError(context, "Erro inserindo cliente", exception.toString());
+      showError(context, "Erro: $s", "");
     }
   }
 

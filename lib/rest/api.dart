@@ -6,5 +6,5 @@ class Api {
   static final String endpoint = "localhost:3000";
 }*/
 class Api {
-  static final String endpoint = "172.20.81.162:9000";
+  static final String endpoint = "localhost:9000";
 }
