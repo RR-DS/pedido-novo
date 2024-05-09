@@ -15,15 +15,15 @@ class InserirPedidoPage extends StatefulWidget {
 class _InserirPedidoState extends State<InserirPedidoPage> {
   final _formKey = GlobalKey<FormState>();
   final _dataController = TextEditingController();
-  final _idprodutoController = TextEditingController();
-  final _quantidadeController = TextEditingController();
+  final _idclienteController = TextEditingController();
+  //final _quantidadeController = TextEditingController();
 
   @override
 //DISPOSE
   void dispose() {
     _dataController.dispose();
-    _idprodutoController.dispose();
-    _quantidadeController.dispose();
+    _idclienteController.dispose();
+    //_quantidadeController.dispose();
     super.dispose();
   }
 
@@ -43,14 +43,14 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
 
   void _salvar() async {
     Pedido pedido =
-        Pedido.novo(_dataController.text, _idprodutoController.text);
+        Pedido.novo(_dataController.text, _idclienteController.text);
 
     try {
       PedidoRepository repository = PedidoRepository();
       await repository.inserir(pedido);
       _dataController.clear();
-      _idprodutoController.clear();
-      _quantidadeController.clear();
+      _idclienteController.clear();
+      //_quantidadeController.clear();
 
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Pedido salvo com sucesso')));
@@ -105,7 +105,7 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
                 Text('Id Cliente'),
                 Expanded(
                     child: TextFormField(
-                  controller: _idprodutoController,
+                  controller: _idclienteController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Campo não pode ser vazio';
