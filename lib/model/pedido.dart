@@ -4,29 +4,29 @@ import 'dart:convert';
 class Pedido {
   int? id;
   String data;
-  String idproduto;
-  String quantidade;
+  String idcliente;
+  //String quantidade;
   //int idade;
 
-  Pedido(this.id, this.data, this.quantidade, this.idproduto);
-  Pedido.novo(this.data, this.quantidade, this.idproduto);
+  Pedido(this.id, this.data, this.idcliente);
+  Pedido.novo(this.data, this.idcliente);
 
   Map<String, dynamic> toMap() {
     return {
       'pedido_id': this.id,
       'pedido_data': this.data,
-      'pedido_idproduto': this.idproduto,
-      'pedido_quantidade': this.quantidade,
+      'pedido_idproduto': this.idcliente,
+      //'pedido_quantidade': this.quantidade,
       //'boi_idade': this.idade
     };
   }
 
   static Pedido fromMap(Map<String, dynamic> map) {
     return Pedido(
-      map['boi_id'],
-      map['boi_data'],
-      map['boi_idproduto'],
-      map['boi_quantidade'],
+      map['id'],
+      map['data'],
+      map['idcliente'],
+      //map['boi_quantidade'],
     ); //id, data, quantidade)
   }
 

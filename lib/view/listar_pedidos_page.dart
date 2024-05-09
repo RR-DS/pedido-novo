@@ -93,8 +93,8 @@ ConennectionFactory.factory.close();
               content: Column(
                 children: [
                   Text("Data: ${pedido.data}"),
-                  Text("Id Produto: ${pedido.idproduto}"),
-                  Text("Quantidade: ${pedido.quantidade}"),
+                  Text("Id Produto: ${pedido.idcliente}"),
+                  //Text("Quantidade: ${pedido.quantidade}"),
                 ],
               ),
               actions: [

@@ -42,8 +42,8 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
   //--- SALVAR ANTIGO----
 
   void _salvar() async {
-    Pedido pedido = Pedido.novo(_dataController.text, _idprodutoController.text,
-        _quantidadeController.text);
+    Pedido pedido =
+        Pedido.novo(_dataController.text, _idprodutoController.text);
 
     try {
       PedidoRepository repository = PedidoRepository();
@@ -102,7 +102,7 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Id Produto'),
+                Text('Id Cliente'),
                 Expanded(
                     child: TextFormField(
                   controller: _idprodutoController,
@@ -115,7 +115,7 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
                 ))
               ],
             ),
-            Row(
+            /*Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text('Quantidade'),
@@ -130,7 +130,7 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
                   },
                 ))
               ],
-            ),
+            ),*/
             /*Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
