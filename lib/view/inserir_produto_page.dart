@@ -53,8 +53,9 @@ class _InserirProdutoState extends State<InserirProdutoPage> {
 
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Produto salvo com sucesso')));
-    } catch (exception) {
+    } catch (exception, s) {
       showError(context, "Erro inserindo produto", exception.toString());
+      showError(context, "Erro: $s", "");
     }
   }
 
@@ -84,7 +85,7 @@ class _InserirProdutoState extends State<InserirProdutoPage> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Nome'),
+                Text('Descrição'),
                 Expanded(
                     child: TextFormField(
                   controller: _descricaoController,

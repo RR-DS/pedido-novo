@@ -13,8 +13,8 @@ class Produto {
 
   Map<String, dynamic> toMap() {
     return {
-      'produto_id': this.id,
-      'produto_descricao': this.descricao,
+      'id': this.id,
+      'descricao': this.descricao,
       //'produto_sobrenome': this.sobrenome,
       //'produto_cpf': this.cpf,
       //'produto_idade': this.idade
@@ -23,8 +23,8 @@ class Produto {
 
   static Produto fromMap(Map<String, dynamic> map) {
     return Produto(
-      map['produto_id'],
-      map['produto_descricao'],
+      map['id'],
+      map['descricao'],
       //map['produto_sobrenome'],
       // map['produto_cpf'],
     ); //id, descricao, cpf)

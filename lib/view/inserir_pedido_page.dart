@@ -54,8 +54,9 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
 
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Pedido salvo com sucesso')));
-    } catch (exception) {
+    } catch (exception, s) {
       showError(context, "Erro inserindo pedido", exception.toString());
+      showError(context, "Erro: $s", "");
     }
   }
 

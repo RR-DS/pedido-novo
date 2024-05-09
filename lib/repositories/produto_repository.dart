@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:pedido/model/produto.dart';
 import 'package:pedido/rest/produto_rest.dart';
 
