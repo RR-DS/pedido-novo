@@ -7,7 +7,7 @@ import 'api.dart';
 class PedidoRest {
   Future<Pedido> buscar(int id) async {
     final http.Response response =
-        await http.get(Uri.http(Api.endpoint, '/pedidos/$id'));
+        await http.get(Uri.http(Api.endpoint, '/clientes/pedidos/$id'));
     if (response.statusCode == 200) {
       return Pedido.fromJson(response.body);
     } else {
@@ -31,7 +31,7 @@ class PedidoRest {
   Future<Pedido> inserir(Pedido pedido) async {
     pedido.id = -1;
     final http.Response response =
-        await http.post(Uri.http(Api.endpoint, 'pedidos'),
+        await http.post(Uri.http(Api.endpoint, '/clientes/pedidos'),
             headers: <String, String>{
               'Content-Type': 'application/json; charset=UTF-8',
             },

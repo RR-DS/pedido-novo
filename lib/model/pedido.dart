@@ -13,9 +13,9 @@ class Pedido {
 
   Map<String, dynamic> toMap() {
     return {
-      'pedido_id': this.id,
-      'pedido_data': this.data,
-      'pedido_idproduto': this.idcliente,
+      'id': this.id,
+      'data': this.data,
+      'idcliente': this.idcliente,
       //'pedido_quantidade': this.quantidade,
       //'boi_idade': this.idade
     };
