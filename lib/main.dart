@@ -10,6 +10,9 @@ import 'routes/routes.dart';
 import 'view/editar_cliente_page.dart';
 import 'view/inserir_cliente_page.dart';
 import 'view/listar_clientes_page.dart';
+import 'view/editar_itempedido_page.dart';
+import 'view/inserir_itempedido_page.dart';
+import 'view/listar_itempedidos_page.dart';
 
 //MAIN.DART
 void main() {
@@ -39,6 +42,9 @@ class MyApp extends StatelessWidget {
         Routes.editPdd: (context) => EditarPedidoPage(),
         Routes.insertPdd: (context) => InserirPedidoPage(),
         Routes.listPdd: (context) => ListarPedidosPage(),
+        Routes.editItempdd: (context) => EditarItempedidoPage(),
+        Routes.insertItempdd: (context) => InserirItempedidoPage(),
+        Routes.listItempdd: (context) => ListarItempedidosPage(),
       },
     );
   }
@@ -114,6 +120,19 @@ class AppDrawer extends StatelessWidget {
               text: 'Listar Pedido',
               onTap: () =>
                   Navigator.pushReplacementNamed(context, Routes.listPdd)),
+          Divider(),
+          // ListTile(title: Text('0.0.1'), onTap: () {}),
+          _createDrawerItem(
+              icon: Icons.add,
+              text: 'Inserir Item do Pedido',
+              onTap: () => Navigator.pushReplacementNamed(
+                  context, Routes.insertItempdd)),
+//Divider(),
+          _createDrawerItem(
+              icon: Icons.list,
+              text: 'Listar Item do Pedido',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.listItempdd)),
           Divider(),
           // ListTile(title: Text('0.0.1'), onTap: () {}),
         ],

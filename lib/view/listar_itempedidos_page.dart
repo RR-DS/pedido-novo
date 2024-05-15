@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:pedido/helper/error.dart';
 import 'package:pedido/main.dart';
-import 'package:pedido/model/pedido.dart';
-import 'package:pedido/repositories/pedido_repository.dart';
+import 'package:pedido/model/itempedido.dart';
+import 'package:pedido/repositories/itempedido_repository.dart';
 import 'editar_pedido_page.dart';
 
 //LISTARBOIPAGE
-class ListarPedidosPage extends StatefulWidget {
-  static const String routeNamePdd = '/listPedido';
+class ListarItempedidosPage extends StatefulWidget {
+  static const String routeNameItempdd = '/listItempedidos';
   @override
   State<StatefulWidget> createState() => _ListarPedidosState();
 }
 
-class _ListarPedidosState extends State<ListarPedidosPage> {
-  List<Pedido> _lista = <Pedido>[];
+class _ListarPedidosState extends State<ListarItempedidosPage> {
+  List<Itempedido> _lista = <Itempedido>[];
 
 //REFRESHLIST
   @override
@@ -30,20 +30,21 @@ class _ListarPedidosState extends State<ListarPedidosPage> {
 
 //REFRESHLIST
   void _refreshList() async {
-    List<Pedido> tempList = await _obterTodos();
+    List<Itempedido> tempList = await _obterTodos();
     setState(() {
       _lista = tempList;
     });
   }
 
 //OBTERTODOS
-  Future<List<Pedido>> _obterTodos() async {
-    List<Pedido> tempLista = <Pedido>[];
+  Future<List<Itempedido>> _obterTodos() async {
+    List<Itempedido> tempLista = <Itempedido>[];
     try {
-      PedidoRepository repository = PedidoRepository();
+      ItempedidoRepository repository = ItempedidoRepository();
       tempLista = await repository.buscarTodos();
     } catch (exception) {
-      showError(context, "Erro obtendo lista de pedido", exception.toString());
+      showError(
+          context, "Erro obtendo lista de itempedido", exception.toString());
     }
 
     return tempLista;
@@ -54,22 +55,22 @@ OBTERTODOS-SQLITE-DAOECONECTION
     Database db = await ConennectionFactory.factory.database;
     BoiDAO = Boi(db);
 
-    List<Pedido> tempLista = await dao.obterTodos();
+    List<Itempedido> tempLista = await dao.obterTodos();
     ConennectionFactory.factory.close();
 */
-  //<Pedido>[
+  //<Itempedido>[
   //Boi(1, "nome", "raca", 10), //dar uma olhada aqui
   //];
 
 //REMOVEBOI
-  void _removerPedido(int id) async {
+  void _removerItempedido(int id) async {
     try {
-      PedidoRepository repository = PedidoRepository();
+      ItempedidoRepository repository = ItempedidoRepository();
       await repository.remover(id);
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Pedido $id removido com sucesso')));
+          SnackBar(content: Text('Itempedido $id removido com sucesso')));
     } catch (exception) {
-      showError(context, "Erro removendo pedido", exception.toString());
+      showError(context, "Erro removendo itempedido", exception.toString());
     }
   }
 //REMOVEBOI-SQLITE-DAOECONECTION
@@ -84,17 +85,17 @@ ConennectionFactory.factory.close();
 //SHOWITEM ANTIGO
 
   void _showItem(BuildContext context, int index) {
-    Pedido pedido = _lista[index];
+    Itempedido itempedido = _lista[index];
     showDialog(
         context: context,
         builder: ((context) {
           return AlertDialog(
-              title: Text(pedido.data),
+              title: Text(itempedido.idproduto),
               content: Column(
                 children: [
-                  Text("Data: ${pedido.data}"),
-                  Text("Id Cliente: ${pedido.idcliente}"),
-                  //Text("Quantidade: ${pedido.quantidade}"),
+                  Text("Id Pedido : ${itempedido.idpedido}"),
+                  Text("Id Produto: ${itempedido.idproduto}"),
+                  Text("Quantidade: ${itempedido.quantidade}"),
                 ],
               ),
               actions: [
@@ -145,7 +146,7 @@ ConennectionFactory.factory.close();
 */
 //EDITITEM
   void _editItem(BuildContext context, int index) {
-    Pedido c = _lista[index];
+    Itempedido c = _lista[index];
     Navigator.pushNamed(
       context,
       EditarPedidoPage.routeNamePdd,
@@ -156,17 +157,17 @@ ConennectionFactory.factory.close();
 //REMOVEITEM
 
   void _removeItem(BuildContext context, int index) {
-    Pedido c = _lista[index];
+    Itempedido c = _lista[index];
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Remover Pedido"),
+              title: Text("Remover Item do pedido"),
               content: Text("Gostaria realmente de remover ${c.id}?"),
               actions: [
                 TextButton(
                   child: Text("Sim"),
                   onPressed: () {
-                    _removerPedido(c.id!);
+                    _removerItempedido(c.id!);
                     _refreshList();
                     Navigator.of(context).pop();
                   },
@@ -177,11 +178,11 @@ ConennectionFactory.factory.close();
 
 //BUILDITEM
   ListTile _buildItem(BuildContext context, int index) {
-    Pedido c = _lista[index];
+    Itempedido c = _lista[index];
     return ListTile(
       leading: const Icon(Icons.pets),
-      title: Text(c.data), //(c.nome)
-      //subtitle: Text(c.cpf),
+      title: Text(c.idproduto), //Text(c.idproduto),
+      subtitle: Text(c.quantidade),
       onTap: () {
         _showItem(context, index);
       },
