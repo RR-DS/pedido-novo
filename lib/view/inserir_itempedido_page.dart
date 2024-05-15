@@ -42,8 +42,10 @@ class _InserirItempedidoState extends State<InserirItempedidoPage> {
   //--- SALVAR ANTIGO----
 
   void _salvar() async {
-    Itempedido itempedido = Itempedido.novo(_idpedidoController.text,
-        _idprodutoController.text, _quantidadeController.text);
+    Itempedido itempedido = Itempedido.novo(
+        int.parse(_idpedidoController.text),
+        int.parse(_idprodutoController.text),
+        int.parse(_quantidadeController.text));
 
     try {
       ItempedidoRepository repository = ItempedidoRepository();

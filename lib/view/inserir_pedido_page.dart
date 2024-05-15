@@ -43,7 +43,7 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
 
   void _salvar() async {
     Pedido pedido =
-        Pedido.novo(_dataController.text, _idclienteController.text);
+        Pedido.novo(_dataController.text, int.parse(_idclienteController.text));
 
     try {
       PedidoRepository repository = PedidoRepository();

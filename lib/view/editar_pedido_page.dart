@@ -41,7 +41,7 @@ class _EditarPedidoState extends State<EditarPedidoPage> {
       PedidoRepository repository = PedidoRepository();
       this._pedido = await repository.buscar(this._id);
       _dataController.text = this._pedido!.data;
-      _idprodutoController.text = this._pedido!.idcliente;
+      _idprodutoController.text = this._pedido!.idcliente.toString();
       //_quantidadeController.text = this._pedido!.quantidade;
     } catch (exception) {
       showError(context, "Erro recuperando cliente", exception.toString());
@@ -88,7 +88,7 @@ class _EditarPedidoState extends State<EditarPedidoPage> {
 //SALVAR NOVO - COM REST
   void _salvar() async {
     this._pedido!.data = _dataController.text;
-    this._pedido!.idcliente = _idprodutoController.text;
+    this._pedido!.idcliente = int.parse(_idprodutoController.text);
     //this._pedido!.quantidade = _quantidadeController.text;
 
     try {

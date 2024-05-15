@@ -90,7 +90,7 @@ ConennectionFactory.factory.close();
         context: context,
         builder: ((context) {
           return AlertDialog(
-              title: Text(itempedido.idproduto),
+              title: Text(itempedido.idpedido.toString()),
               content: Column(
                 children: [
                   Text("Id Pedido : ${itempedido.idpedido}"),
@@ -181,8 +181,8 @@ ConennectionFactory.factory.close();
     Itempedido c = _lista[index];
     return ListTile(
       leading: const Icon(Icons.pets),
-      title: Text(c.idproduto), //Text(c.idproduto),
-      subtitle: Text(c.quantidade),
+      title: Text(c.idproduto.toString()), //Text(c.idproduto),
+      subtitle: Text(c.quantidade.toString()),
       onTap: () {
         _showItem(context, index);
       },

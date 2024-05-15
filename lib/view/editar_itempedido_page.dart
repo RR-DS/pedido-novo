@@ -40,9 +40,9 @@ class _EditarItempedidoState extends State<EditarItempedidoPage> {
     try {
       ItempedidoRepository repository = ItempedidoRepository();
       this._itempedido = await repository.buscar(this._id);
-      _idpedidoController.text = this._itempedido!.idpedido;
-      _idprodutoController.text = this._itempedido!.idproduto;
-      _quantidadeController.text = this._itempedido!.quantidade;
+      _idpedidoController.text = this._itempedido!.idpedido.toString();
+      _idprodutoController.text = this._itempedido!.idproduto.toString();
+      _quantidadeController.text = this._itempedido!.quantidade.toString();
       //_quantidadeController.text = this._pedido!.quantidade;
     } catch (exception) {
       showError(context, "Erro recuperando cliente", exception.toString());
@@ -88,9 +88,9 @@ class _EditarItempedidoState extends State<EditarItempedidoPage> {
 
 //SALVAR NOVO - COM REST
   void _salvar() async {
-    this._itempedido!.idpedido = _idpedidoController.text;
-    this._itempedido!.idproduto = _idprodutoController.text;
-    this._itempedido!.quantidade = _quantidadeController.text;
+    this._itempedido!.idpedido = int.parse(_idpedidoController.text);
+    this._itempedido!.idproduto = int.parse(_idprodutoController.text);
+    this._itempedido!.quantidade = int.parse(_quantidadeController.text);
 
     try {
       ItempedidoRepository repository = ItempedidoRepository();

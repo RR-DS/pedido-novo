@@ -19,7 +19,7 @@ class PedidoRest {
 //BOI_REST.DART (3)
   Future<List<Pedido>> buscarTodos() async {
     final http.Response response =
-        await http.get(Uri.http(Api.endpoint, 'pedidos'));
+        await http.get(Uri.http(Api.endpoint, '/clientes/pedidos'));
     if (response.statusCode == 200) {
       return Pedido.fromJsonList(response.body);
     } else {
@@ -46,7 +46,7 @@ class PedidoRest {
 //BOI_REST.DART (5)
   Future<Pedido> alterar(Pedido pedido) async {
     final http.Response response = await http.put(
-      Uri.http(Api.endpoint, 'pedidos/${pedido.id}'),
+      Uri.http(Api.endpoint, '/clientes/pedidos/${pedido.id}'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -62,7 +62,7 @@ class PedidoRest {
 //BOI_REST.DART (6)
   Future<Pedido> remover(int id) async {
     final http.Response response = await http.delete(
-        Uri.http(Api.endpoint, '/pedidos/$id'),
+        Uri.http(Api.endpoint, '/clientes/pedidos/$id'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         });

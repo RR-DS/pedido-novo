@@ -3,9 +3,9 @@ import 'dart:convert';
 
 class Itempedido {
   int? id;
-  String idpedido;
-  String idproduto;
-  String quantidade;
+  int idpedido;
+  int idproduto;
+  int quantidade;
   //int idade;
 
   Itempedido(this.id, this.idpedido, this.idproduto, this.quantidade);
@@ -16,7 +16,7 @@ class Itempedido {
       'id': this.id,
       'idpedido': this.idpedido,
       'idproduto': this.idproduto,
-      'quantidade': this.quantidade,
+      'qtdade': this.quantidade,
       //'boi_idade': this.idade
     };
   }
@@ -26,7 +26,7 @@ class Itempedido {
       map['id'],
       map['idpedido'],
       map['idproduto'],
-      map['quantidade'],
+      map['qtdade'],
     ); //id, data, quantidade)
   }
 

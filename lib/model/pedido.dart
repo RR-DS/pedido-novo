@@ -4,7 +4,7 @@ import 'dart:convert';
 class Pedido {
   int? id;
   String data;
-  String idcliente;
+  int idcliente;
   //String quantidade;
   //int idade;
 
