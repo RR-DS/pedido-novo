@@ -7,7 +7,7 @@ import 'editar_pedido_page.dart';
 
 //LISTARBOIPAGE
 class ListarItempedidosPage extends StatefulWidget {
-  static const String routeNameItempdd = '/listItempedidos';
+  static const String routeNameItempdd = '/listItempdd';
   @override
   State<StatefulWidget> createState() => _ListarPedidosState();
 }
