@@ -3,16 +3,16 @@ import 'package:pedido/helper/error.dart';
 import 'package:pedido/main.dart';
 import 'package:pedido/model/itempedido.dart';
 import 'package:pedido/repositories/itempedido_repository.dart';
-import 'editar_pedido_page.dart';
+import 'editar_itempedido_page.dart';
 
 //LISTARBOIPAGE
 class ListarItempedidosPage extends StatefulWidget {
   static const String routeNameItempdd = '/listItempdd';
   @override
-  State<StatefulWidget> createState() => _ListarPedidosState();
+  State<StatefulWidget> createState() => _ListarItempedidosState();
 }
 
-class _ListarPedidosState extends State<ListarItempedidosPage> {
+class _ListarItempedidosState extends State<ListarItempedidosPage> {
   List<Itempedido> _lista = <Itempedido>[];
 
 //REFRESHLIST
@@ -49,20 +49,8 @@ class _ListarPedidosState extends State<ListarItempedidosPage> {
 
     return tempLista;
   }
-/*
-OBTERTODOS-SQLITE-DAOECONECTION
-//Banco de dados buscar as Informações
-    Database db = await ConennectionFactory.factory.database;
-    BoiDAO = Boi(db);
 
-    List<Itempedido> tempLista = await dao.obterTodos();
-    ConennectionFactory.factory.close();
-*/
-  //<Itempedido>[
-  //Boi(1, "nome", "raca", 10), //dar uma olhada aqui
-  //];
-
-//REMOVEBOI
+//REMOVE
   void _removerItempedido(int id) async {
     try {
       ItempedidoRepository repository = ItempedidoRepository();
@@ -73,16 +61,8 @@ OBTERTODOS-SQLITE-DAOECONECTION
       showError(context, "Erro removendo itempedido", exception.toString());
     }
   }
-//REMOVEBOI-SQLITE-DAOECONECTION
-/*
-Database db = await ConennectionFactory.factory.database;
-    BoiDAO dao = BoiDAO(db);
-    await dao.remover(id);
 
-ConennectionFactory.factory.close();
-*/
-
-//SHOWITEM ANTIGO
+//SHOWITEM
 
   void _showItem(BuildContext context, int index) {
     Itempedido itempedido = _lista[index];
@@ -108,48 +88,12 @@ ConennectionFactory.factory.close();
         }));
   }
 
-//SHOWITEM NOVO DAO
-/*  void _showItem(BuildContext context, int index) {
-    Boi boi = _lista[index];
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-              title: Text(boi.nome),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(children: [
-                    Icon(Icons.create),
-                    Text("Nome: ${boi.nome}")
-                  ]),
-                  Row(children: [
-                    Icon(Icons.assistant_photo),
-                    Text("Raça: ${boi.raca}")
-                  ]),
-                  Row(children: [
-                    Icon(Icons.cake),
-                    Text("Idade: ${boi.idade} anos")
-                  ]),
-                ],
-              ),
-              actions: [
-                TextButton(
-                    child: Text("OK"),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    })
-              ]);
-        });
-  }
-*/
 //EDITITEM
   void _editItem(BuildContext context, int index) {
     Itempedido c = _lista[index];
     Navigator.pushNamed(
       context,
-      EditarPedidoPage.routeNamePdd,
+      EditarItempedidoPage.routeNameItempdd,
       arguments: <String, int>{"id": c.id!},
     );
   }
@@ -182,7 +126,7 @@ ConennectionFactory.factory.close();
     return ListTile(
       leading: const Icon(Icons.pets),
       title: Text(c.idproduto.toString()), //Text(c.idproduto),
-      subtitle: Text(c.quantidade.toString()),
+      //subtitle: Text(c.quantidade.toString()),
       onTap: () {
         _showItem(context, index);
       },
@@ -209,7 +153,7 @@ ConennectionFactory.factory.close();
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Listagem de Pedidos"),
+          title: const Text("Listagem de Item de Pedidos"),
         ),
         drawer: AppDrawer(),
         body: ListView.builder(

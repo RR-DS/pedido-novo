@@ -7,7 +7,7 @@ import 'editar_pedido_page.dart';
 
 //LISTARBOIPAGE
 class ListarPedidosPage extends StatefulWidget {
-  static const String routeNamePdd = '/listPedido';
+  static const String routeNamePdd = '/listPdd';
   @override
   State<StatefulWidget> createState() => _ListarPedidosState();
 }
@@ -48,20 +48,8 @@ class _ListarPedidosState extends State<ListarPedidosPage> {
 
     return tempLista;
   }
-/*
-OBTERTODOS-SQLITE-DAOECONECTION
-//Banco de dados buscar as Informações
-    Database db = await ConennectionFactory.factory.database;
-    BoiDAO = Boi(db);
 
-    List<Pedido> tempLista = await dao.obterTodos();
-    ConennectionFactory.factory.close();
-*/
-  //<Pedido>[
-  //Boi(1, "nome", "raca", 10), //dar uma olhada aqui
-  //];
-
-//REMOVEBOI
+//REMOVE
   void _removerPedido(int id) async {
     try {
       PedidoRepository repository = PedidoRepository();
@@ -72,16 +60,8 @@ OBTERTODOS-SQLITE-DAOECONECTION
       showError(context, "Erro removendo pedido", exception.toString());
     }
   }
-//REMOVEBOI-SQLITE-DAOECONECTION
-/*
-Database db = await ConennectionFactory.factory.database;
-    BoiDAO dao = BoiDAO(db);
-    await dao.remover(id);
 
-ConennectionFactory.factory.close();
-*/
-
-//SHOWITEM ANTIGO
+//SHOWITEM
 
   void _showItem(BuildContext context, int index) {
     Pedido pedido = _lista[index];
@@ -107,42 +87,6 @@ ConennectionFactory.factory.close();
         }));
   }
 
-//SHOWITEM NOVO DAO
-/*  void _showItem(BuildContext context, int index) {
-    Boi boi = _lista[index];
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-              title: Text(boi.nome),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(children: [
-                    Icon(Icons.create),
-                    Text("Nome: ${boi.nome}")
-                  ]),
-                  Row(children: [
-                    Icon(Icons.assistant_photo),
-                    Text("Raça: ${boi.raca}")
-                  ]),
-                  Row(children: [
-                    Icon(Icons.cake),
-                    Text("Idade: ${boi.idade} anos")
-                  ]),
-                ],
-              ),
-              actions: [
-                TextButton(
-                    child: Text("OK"),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    })
-              ]);
-        });
-  }
-*/
 //EDITITEM
   void _editItem(BuildContext context, int index) {
     Pedido c = _lista[index];
