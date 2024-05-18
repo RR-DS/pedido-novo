@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pedido System',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
           useMaterial3: true,
-          primarySwatch: Colors.blue),
+          primarySwatch: Colors.yellow),
       home: MyHomePage(title: 'Pedido System'),
       routes: {
         Routes.edit: (context) => EditarClientePage(),

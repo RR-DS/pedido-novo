@@ -19,7 +19,7 @@ class PedidoRest {
 //BOI_REST.DART (3)
   Future<List<Pedido>> buscarTodos() async {
     final http.Response response =
-        await http.get(Uri.http(Api.endpoint, '/clientes/pedidos'));
+        await http.get(Uri.http(Api.endpoint, 'clientes/pedidos'));
     if (response.statusCode == 200) {
       return Pedido.fromJsonList(response.body);
     } else {
