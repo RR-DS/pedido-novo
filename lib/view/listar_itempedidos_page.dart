@@ -75,7 +75,7 @@ class _ListarItempedidosState extends State<ListarItempedidosPage> {
                 children: [
                   Text("Id Pedido : ${itempedido.idpedido}"),
                   Text("Id Produto: ${itempedido.idproduto}"),
-                  Text("Quantidade: ${itempedido.quantidade}"),
+                  Text("Quantidade: ${itempedido.qtdade}"),
                 ],
               ),
               actions: [
@@ -126,7 +126,7 @@ class _ListarItempedidosState extends State<ListarItempedidosPage> {
     return ListTile(
       leading: const Icon(Icons.pets),
       title: Text(c.idproduto.toString()), //Text(c.idproduto),
-      //subtitle: Text(c.quantidade.toString()),
+      //subtitle: Text(c.qtdade.toString()),
       onTap: () {
         _showItem(context, index);
       },

@@ -5,18 +5,18 @@ class Itempedido {
   int? id;
   int idpedido;
   int idproduto;
-  int quantidade;
+  int qtdade;
   //int idade;
 
-  Itempedido(this.id, this.idpedido, this.idproduto, this.quantidade);
-  Itempedido.novo(this.idpedido, this.idproduto, this.quantidade);
+  Itempedido(this.id, this.idpedido, this.idproduto, this.qtdade);
+  Itempedido.novo(this.idpedido, this.idproduto, this.qtdade);
 
   Map<String, dynamic> toMap() {
     return {
       'id': this.id,
       'idpedido': this.idpedido,
       'idproduto': this.idproduto,
-      'qtdade': this.quantidade,
+      'qtdade': this.qtdade,
       //'boi_idade': this.idade
     };
   }
@@ -27,7 +27,7 @@ class Itempedido {
       map['idpedido'],
       map['idproduto'],
       map['qtdade'],
-    ); //id, data, quantidade)
+    ); //id, data, qtdade)
   }
 
   static List<Itempedido> fromMaps(List<Map<String, dynamic>> maps) {

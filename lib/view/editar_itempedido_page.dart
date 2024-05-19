@@ -14,7 +14,7 @@ class _EditarItempedidoState extends State<EditarItempedidoPage> {
   final _formKey = GlobalKey<FormState>();
   final _idpedidoController = TextEditingController();
   final _idprodutoController = TextEditingController();
-  final _quantidadeController = TextEditingController();
+  final _qtdadeController = TextEditingController();
   int _id = 0;
   Itempedido? _itempedido;
 
@@ -23,7 +23,7 @@ class _EditarItempedidoState extends State<EditarItempedidoPage> {
   void dispose() async {
     _idpedidoController.dispose();
     _idprodutoController.dispose();
-    _quantidadeController.dispose();
+    _qtdadeController.dispose();
     super.dispose();
   }
 
@@ -42,8 +42,8 @@ class _EditarItempedidoState extends State<EditarItempedidoPage> {
       this._itempedido = await repository.buscar(this._id);
       _idpedidoController.text = this._itempedido!.idpedido.toString();
       _idprodutoController.text = this._itempedido!.idproduto.toString();
-      _quantidadeController.text = this._itempedido!.quantidade.toString();
-      //_quantidadeController.text = this._pedido!.quantidade;
+      _qtdadeController.text = this._itempedido!.qtdade.toString();
+      //_qtdadeController.text = this._pedido!.qtdade;
     } catch (exception) {
       showError(context, "Erro recuperando cliente", exception.toString());
       Navigator.pop(context);
@@ -90,7 +90,7 @@ class _EditarItempedidoState extends State<EditarItempedidoPage> {
   void _salvar() async {
     this._itempedido!.idpedido = int.parse(_idpedidoController.text);
     this._itempedido!.idproduto = int.parse(_idprodutoController.text);
-    this._itempedido!.quantidade = int.parse(_quantidadeController.text);
+    this._itempedido!.qtdade = int.parse(_qtdadeController.text);
 
     try {
       ItempedidoRepository repository = ItempedidoRepository();
@@ -145,7 +145,7 @@ class _EditarItempedidoState extends State<EditarItempedidoPage> {
               Text("Quantidade:"),
               Expanded(
                   child: TextFormField(
-                controller: _quantidadeController,
+                controller: _qtdadeController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Campo não pode ser vazio';
