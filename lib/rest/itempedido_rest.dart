@@ -7,7 +7,7 @@ import 'api.dart';
 class ItempedidoRest {
   Future<Itempedido> buscar(int id) async {
     final http.Response response = await http
-        .get(Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos/$id'));
+        .get(Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos$id'));
     if (response.statusCode == 200) {
       return Itempedido.fromJson(response.body);
     } else {
@@ -23,7 +23,7 @@ class ItempedidoRest {
     if (response.statusCode == 200) {
       return Itempedido.fromJsonList(response.body);
     } else {
-      throw Exception('Erro buscando todos os pedidos');
+      throw Exception('Erro buscando todos os Itens de pedidos');
     }
   }
 
@@ -46,7 +46,7 @@ class ItempedidoRest {
 //BOI_REST.DART (5)
   Future<Itempedido> alterar(Itempedido itempedido) async {
     final http.Response response = await http.put(
-      Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos/${itempedido.id}'),
+      Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos${itempedido.id}'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -62,7 +62,7 @@ class ItempedidoRest {
 //BOI_REST.DART (6)
   Future<Itempedido> remover(int id) async {
     final http.Response response = await http.delete(
-        Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos/$id'),
+        Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos$id'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         });
@@ -70,7 +70,7 @@ class ItempedidoRest {
       return Itempedido.fromJson(response.body);
       //return Boi(); PROFESSOR QUE FALOU PARA FAZER ISSO
     } else {
-      throw Exception('Erro removido itempedido: $id.');
+      throw Exception('Erro removido: $id.');
     }
   }
 }

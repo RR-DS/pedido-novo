@@ -70,7 +70,7 @@ class ClienteRest {
       return Cliente.fromJson(response.body);
       //return Boi(); PROFESSOR QUE FALOU PARA FAZER ISSO
     } else {
-      throw Exception('Erro removido boi: $id.');
+      throw Exception('Erro removido: $id.');
     }
   }
 }
