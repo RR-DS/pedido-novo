@@ -125,7 +125,7 @@ class _ListarItempedidosState extends State<ListarItempedidosPage> {
     Itempedido c = _lista[index];
     return ListTile(
       leading: const Icon(Icons.pets),
-      title: Text(c.idpedido.toString()), //Text(c.idproduto),
+      title: Text(c.id.toString()), //Text(c.idproduto),
       //subtitle: Text(c.qtdade.toString()),
       onTap: () {
         _showItem(context, index);
