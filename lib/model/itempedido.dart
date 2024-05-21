@@ -27,7 +27,7 @@ class Itempedido {
       map['idpedido'],
       map['idproduto'],
       map['qtdade'],
-    ); //id, data, qtdade)
+    ); //id, idpedido, idproduto, qtdade)
   }
 
   static List<Itempedido> fromMaps(List<Map<String, dynamic>> maps) {

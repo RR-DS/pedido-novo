@@ -28,15 +28,7 @@ class _InserirProdutoState extends State<InserirProdutoPage> {
   }
 
 //SALVAR - INT COM BANCO - ANTIGO
-  /* void _salvar() async {
-    _descricaoController.clear();
-    _racaController.clear();
-    _idadeController.clear();
 
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('Boi salvo com sucesso')));
-  }
-*/
   //SALVAR - INT COM BANCO - NOVO
 
   //--- SALVAR ANTIGO----
@@ -59,23 +51,6 @@ class _InserirProdutoState extends State<InserirProdutoPage> {
     }
   }
 
-//SALVAR NOVO
-/*
-  void _salvar() async {
-    Database db = await ConennectionFactory.factory.database;
-    BoiDAO dao = BoiDAO(db);
-    Boi boi = Produto.novo(_descricaoController.text, _racaController.text,
-        int.parse(_idadeController.text));
-    await dao.inserir(boi);
-    ConennectionFactory.factory.close();
-    _descricaoController.clear();
-    _racaController.clear();
-    _idadeController.clear();
-
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('Boi Salvo com sucesso.')));
-  }
-*/
 //BUILDFORM
   Widget _buildForm(BuildContext context) {
     return Column(children: [
@@ -98,54 +73,6 @@ class _InserirProdutoState extends State<InserirProdutoPage> {
                 ))
               ],
             ),
-            /*Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Sobredescricao'),
-                Expanded(
-                    child: TextFormField(
-                  controller: _sobrenomeController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo não pode ser vazio';
-                    }
-                    return null;
-                  },
-                ))
-              ],
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('CPF'),
-                Expanded(
-                    child: TextFormField(
-                  controller: _cpfController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo não pode ser vazio';
-                    }
-                    return null;
-                  },
-                ))
-              ],
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Idade'),
-                Expanded(
-                    child: TextFormField(
-                  controller: _idadeController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo não pode ser vazio';
-                    }
-                    return null;
-                  },
-                ))
-              ],
-            ),*/
             Row(children: [
               ElevatedButton(
                 onPressed: () {

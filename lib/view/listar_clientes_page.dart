@@ -48,18 +48,6 @@ class _ListarClientesState extends State<ListarClientesPage> {
 
     return tempLista;
   }
-/*
-OBTERTODOS-SQLITE-DAOECONECTION
-//Banco de dados buscar as Informações
-    Database db = await ConennectionFactory.factory.database;
-    BoiDAO = Boi(db);
-
-    List<Cliente> tempLista = await dao.obterTodos();
-    ConennectionFactory.factory.close();
-*/
-  //<Cliente>[
-  //Boi(1, "nome", "raca", 10), //dar uma olhada aqui
-  //];
 
 //REMOVEBOI
   void _removerCliente(int id) async {
@@ -72,14 +60,6 @@ OBTERTODOS-SQLITE-DAOECONECTION
       showError(context, "Erro removendo boi", exception.toString());
     }
   }
-//REMOVEBOI-SQLITE-DAOECONECTION
-/*
-Database db = await ConennectionFactory.factory.database;
-    BoiDAO dao = BoiDAO(db);
-    await dao.remover(id);
-
-ConennectionFactory.factory.close();
-*/
 
 //SHOWITEM ANTIGO
 
@@ -107,42 +87,6 @@ ConennectionFactory.factory.close();
         }));
   }
 
-//SHOWITEM NOVO DAO
-/*  void _showItem(BuildContext context, int index) {
-    Boi boi = _lista[index];
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-              title: Text(boi.nome),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(children: [
-                    Icon(Icons.create),
-                    Text("Nome: ${boi.nome}")
-                  ]),
-                  Row(children: [
-                    Icon(Icons.assistant_photo),
-                    Text("Raça: ${boi.raca}")
-                  ]),
-                  Row(children: [
-                    Icon(Icons.cake),
-                    Text("Idade: ${boi.idade} anos")
-                  ]),
-                ],
-              ),
-              actions: [
-                TextButton(
-                    child: Text("OK"),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    })
-              ]);
-        });
-  }
-*/
 //EDITITEM
   void _editItem(BuildContext context, int index) {
     Cliente c = _lista[index];

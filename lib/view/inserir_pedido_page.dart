@@ -60,23 +60,6 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
     }
   }
 
-//SALVAR NOVO
-/*
-  void _salvar() async {
-    Database db = await ConennectionFactory.factory.database;
-    BoiDAO dao = BoiDAO(db);
-    Boi boi = Pedido.novo(_dataController.text, _racaController.text,
-        int.parse(_idadeController.text));
-    await dao.inserir(boi);
-    ConennectionFactory.factory.close();
-    _dataController.clear();
-    _racaController.clear();
-    _idadeController.clear();
-
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('Boi Salvo com sucesso.')));
-  }
-*/
 //BUILDFORM
   Widget _buildForm(BuildContext context) {
     return Column(children: [
@@ -115,38 +98,6 @@ class _InserirPedidoState extends State<InserirPedidoPage> {
                 ))
               ],
             ),
-            /*Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Quantidade'),
-                Expanded(
-                    child: TextFormField(
-                  controller: _quantidadeController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo não pode ser vazio';
-                    }
-                    return null;
-                  },
-                ))
-              ],
-            ),*/
-            /*Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Idade'),
-                Expanded(
-                    child: TextFormField(
-                  controller: _idadeController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo não pode ser vazio';
-                    }
-                    return null;
-                  },
-                ))
-              ],
-            ),*/
             Row(children: [
               ElevatedButton(
                 onPressed: () {

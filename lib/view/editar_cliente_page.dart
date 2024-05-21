@@ -27,14 +27,6 @@ class _EditarClienteState extends State<EditarClientePage> {
     super.dispose();
   }
 
-//OBTER ANTIGO - SEM REST
-  /*void _obterBoi() async {
-    this._boi = Boi(this._id, "Boi ${this._id}", "Raça", 10);
-    _nomeController.text = this._boi!.nome;
-    _racaController.text = this._boi!.raca;
-    _idadeController.text = this._boi!.idade.toString();
-  }*/
-
   //OBTER NOVO - COM REST
   void _obterCliente() async {
     try {
@@ -48,42 +40,6 @@ class _EditarClienteState extends State<EditarClientePage> {
       Navigator.pop(context);
     }
   }
-
-//CRUD | editar_boi_page.dart//DAO
-/*
-  void _obterBoi() async {
-    Database db = await ConennectionFactory.factory.database;
-    BoiDAO dao = BoiDAO(db);
-    this._boi = await dao.obterPorId(this._id);
-
-    ConennectionFactory.factory.close();
-
-    _nomeController.text = this._boi.nome;
-    _nomeController.text = this._boi.raca;
-    _nomeController.text = this._boi.idade.toString();
-
-    try {
-      ClienteRepository repository = ClienteRepository();
-      this._boi = await repository.buscar(this._id);
-      _nomeController.text = this._boi!.nome;
-      _racaController.text = this._boi!.raca;
-      _idadeController.text = this._boi!.idade.toString();
-    } catch (exception) {
-      showError(context, "Erro recuperando boi", exception.toString());
-      Navigator.pop(context);
-    }
-  }
-*/
-//SALVAR ANTIGO - SEM REST
-  /* void _salvar() async {
-    this._boi!.nome = _nomeController.text;
-    this._boi!.raca = _racaController.text;
-    this._boi!.idade = int.parse(_idadeController.text);
-
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('Boi editado com sucesso.')));
-  }
-  */
 
 //SALVAR NOVO - COM REST
   void _salvar() async {
@@ -100,14 +56,6 @@ class _EditarClienteState extends State<EditarClientePage> {
       showError(context, "Erro editando cliente", exception.toString());
     }
   }
-
-// CRUD | editar_boi_page.dart DAO
-/*-
-  void _salvar() async {
-    this._boi.nome = _nomeController.text;
-    this._boi.raca = _racaController.text;
-    this._boi.idade = int.parse(_idadeController.text);
-  }  */
 
   Widget _buildForm(BuildContext context) {
     return Column(children: [
@@ -153,20 +101,6 @@ class _EditarClienteState extends State<EditarClientePage> {
                 },
               ))
             ]),
-            /*
-            Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Text("Idade"),
-              Expanded(
-                  child: TextFormField(
-                controller: _idadeController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Campo não pode ser vazio';
-                  }
-                  return null;
-                },
-              ))
-            ]),*/
             Row(
               children: [
                 ElevatedButton(
@@ -208,5 +142,3 @@ class _EditarClienteState extends State<EditarClientePage> {
     );
   }
 }
-
-//falta metodo show erro pg523
