@@ -31,7 +31,7 @@ class ItempedidoRest {
   Future<Itempedido> inserir(Itempedido itempedido) async {
     itempedido.id = -1;
     final http.Response response = await http.post(
-        Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos/'),
+        Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

@@ -73,9 +73,9 @@ class _ListarItempedidosState extends State<ListarItempedidosPage> {
               title: Text(itempedido.idpedido.toString()),
               content: Column(
                 children: [
-                  Text("Id Pedido : ${itempedido.idpedido}"),
-                  Text("Id Produto: ${itempedido.idproduto}"),
-                  Text("Quantidade: ${itempedido.qtdade}"),
+                  Text("idpedido : ${itempedido.idpedido}"),
+                  Text("idproduto: ${itempedido.idproduto}"),
+                  Text("qtdade: ${itempedido.qtdade}"),
                 ],
               ),
               actions: [

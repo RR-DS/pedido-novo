@@ -147,18 +147,17 @@ Widget _createHeader() {
       margin: EdgeInsets.zero,
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
-          color: Colors.blue,
-          image: DecorationImage(
-              fit: BoxFit.fitHeight,
-              image: AssetImage('pacote da Imagem.png'))),
+          color: Colors.yellowAccent,
+          image: DecorationImage(fit: BoxFit.fitHeight, image: AssetImage(''))),
+      // image: AssetImage('pacote da Imagem.png'))),
       child: Stack(children: <Widget>[
         Positioned(
             bottom: 12.0,
             left: 16.0,
             child: Text("Cadastro de Pedidos",
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
+                    color: Colors.brown,
+                    fontSize: 30.0,
                     fontWeight: FontWeight.w500))),
       ]));
 }
