@@ -5,7 +5,7 @@ import 'package:pedido/model/itempedido.dart';
 import 'package:pedido/repositories/itempedido_repository.dart';
 
 class InserirItempedidoPage extends StatefulWidget {
-  static const String routeNameItempdd = '/insertItempdd';
+  static const String routeNameItem = '/insertItem';
 
   @override
   _InserirItempedidoState createState() => _InserirItempedidoState();

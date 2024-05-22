@@ -15,13 +15,13 @@ class Routes {
   static const String list = ListarClientesPage.routeName;
   static const String insert = InserirClientePage.routeName;
   static const String edit = EditarClientePage.routeName;
-  static const String listProduto = ListarProdutosPage.routeNameP;
-  static const String insertProduto = InserirProdutoPage.routeNameP;
-  static const String editProduto = EditarProdutoPage.routeNameP;
-  static const String listPdd = ListarPedidosPage.routeNamePdd;
-  static const String insertPdd = InserirPedidoPage.routeNamePdd;
-  static const String editPdd = EditarPedidoPage.routeNamePdd;
-  static const String listItempdd = ListarItempedidosPage.routeNameItempdd;
-  static const String insertItempdd = InserirItempedidoPage.routeNameItempdd;
-  static const String editItempdd = EditarItempedidoPage.routeNameItempdd;
+  static const String listProduto = ListarProdutosPage.routeNameProduto;
+  static const String insertProduto = InserirProdutoPage.routeNameProduto;
+  static const String editProduto = EditarProdutoPage.routeNameProduto;
+  static const String listPedido = ListarPedidosPage.routeNamePedido;
+  static const String insertPedido = InserirPedidoPage.routeNamePedido;
+  static const String editPedido = EditarPedidoPage.routeNamePedido;
+  static const String listItem = ListarItempedidosPage.routeNameItem;
+  static const String insertItem = InserirItempedidoPage.routeNameItem;
+  static const String editItem = EditarItempedidoPage.routeNameItem;
 }

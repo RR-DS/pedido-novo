@@ -5,7 +5,7 @@ import 'package:pedido/model/pedido.dart';
 import 'package:pedido/repositories/pedido_repository.dart';
 
 class EditarPedidoPage extends StatefulWidget {
-  static const String routeNamePdd = '/editPedido';
+  static const String routeNamePedido = '/editPedido';
   @override
   _EditarPedidoState createState() => _EditarPedidoState();
 }

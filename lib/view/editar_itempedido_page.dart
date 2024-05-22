@@ -5,7 +5,7 @@ import 'package:pedido/model/itempedido.dart';
 import 'package:pedido/repositories/itempedido_repository.dart';
 
 class EditarItempedidoPage extends StatefulWidget {
-  static const String routeNameItempdd = '/editItempdd';
+  static const String routeNameItem = '/editItem';
   @override
   _EditarItempedidoState createState() => _EditarItempedidoState();
 }

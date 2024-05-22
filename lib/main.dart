@@ -39,12 +39,12 @@ class MyApp extends StatelessWidget {
         Routes.editProduto: (context) => EditarProdutoPage(),
         Routes.insertProduto: (context) => InserirProdutoPage(),
         Routes.listProduto: (context) => ListarProdutosPage(),
-        Routes.editPdd: (context) => EditarPedidoPage(),
-        Routes.insertPdd: (context) => InserirPedidoPage(),
-        Routes.listPdd: (context) => ListarPedidosPage(),
-        Routes.editItempdd: (context) => EditarItempedidoPage(),
-        Routes.insertItempdd: (context) => InserirItempedidoPage(),
-        Routes.listItempdd: (context) => ListarItempedidosPage(),
+        Routes.editPedido: (context) => EditarPedidoPage(),
+        Routes.insertPedido: (context) => InserirPedidoPage(),
+        Routes.listPedido: (context) => ListarPedidosPage(),
+        Routes.editItem: (context) => EditarItempedidoPage(),
+        Routes.insertItem: (context) => InserirItempedidoPage(),
+        Routes.listItem: (context) => ListarItempedidosPage(),
       },
     );
   }
@@ -113,26 +113,26 @@ class AppDrawer extends StatelessWidget {
               icon: Icons.add,
               text: 'Inserir Pedido',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.insertPdd)),
+                  Navigator.pushReplacementNamed(context, Routes.insertPedido)),
 //Divider(),
           _createDrawerItem(
               icon: Icons.list,
               text: 'Listar Pedido',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.listPdd)),
+                  Navigator.pushReplacementNamed(context, Routes.listPedido)),
           Divider(),
           // ListTile(title: Text('0.0.1'), onTap: () {}),
           _createDrawerItem(
               icon: Icons.add,
               text: 'Inserir Item do Pedido',
-              onTap: () => Navigator.pushReplacementNamed(
-                  context, Routes.insertItempdd)),
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.insertItem)),
 //Divider(),
           _createDrawerItem(
               icon: Icons.list,
               text: 'Listar Item do Pedido',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.listItempdd)),
+                  Navigator.pushReplacementNamed(context, Routes.listItem)),
           Divider(),
           // ListTile(title: Text('0.0.1'), onTap: () {}),
         ],

@@ -7,7 +7,7 @@ import 'editar_itempedido_page.dart';
 
 //LISTARBOIPAGE
 class ListarItempedidosPage extends StatefulWidget {
-  static const String routeNameItempdd = '/listItempdd';
+  static const String routeNameItem = '/listItem';
   @override
   State<StatefulWidget> createState() => _ListarItempedidosState();
 }
@@ -93,7 +93,7 @@ class _ListarItempedidosState extends State<ListarItempedidosPage> {
     Itempedido c = _lista[index];
     Navigator.pushNamed(
       context,
-      EditarItempedidoPage.routeNameItempdd,
+      EditarItempedidoPage.routeNameItem,
       arguments: <String, int>{"id": c.id!},
     );
   }

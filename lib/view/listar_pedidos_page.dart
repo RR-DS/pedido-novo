@@ -7,7 +7,7 @@ import 'editar_pedido_page.dart';
 
 //LISTARBOIPAGE
 class ListarPedidosPage extends StatefulWidget {
-  static const String routeNamePdd = '/listPdd';
+  static const String routeNamePedido = '/listPedido';
   @override
   State<StatefulWidget> createState() => _ListarPedidosState();
 }
@@ -92,7 +92,7 @@ class _ListarPedidosState extends State<ListarPedidosPage> {
     Pedido c = _lista[index];
     Navigator.pushNamed(
       context,
-      EditarPedidoPage.routeNamePdd,
+      EditarPedidoPage.routeNamePedido,
       arguments: <String, int>{"id": c.id!},
     );
   }
