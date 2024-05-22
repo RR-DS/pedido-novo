@@ -96,7 +96,7 @@ class _InserirItempedidoState extends State<InserirItempedidoPage> {
                 Text('Quantidade'),
                 Expanded(
                     child: TextFormField(
-                  controller: _quantidadeController,
+                  controller: _quantidadeController, //VER AQUI
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Campo não pode ser vazio';
