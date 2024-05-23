@@ -69,8 +69,9 @@ class PedidoRest {
     if (response.statusCode == 200) {
       return Pedido.fromJson(response.body);
       //return Boi(); PROFESSOR QUE FALOU PARA FAZER ISSO
-      print('Pedido removido com sucesso!');
+      //print('Pedido removido com sucesso!');
     } else {
+      print('Erro ao remover cliente $id: Status code ${response.statusCode}');
       throw Exception('Erro removido pedido: $id.');
     }
   }
