@@ -7,7 +7,7 @@ import 'api.dart';
 class PedidoRest {
   Future<Pedido> buscar(int id) async {
     final http.Response response =
-        await http.get(Uri.http(Api.endpoint, '/clientes/pedidos/$id'));
+        await http.get(Uri.http(Api.endpoint, '/clientes/pedidos$id'));
     if (response.statusCode == 200) {
       return Pedido.fromJson(response.body);
     } else {
@@ -69,6 +69,7 @@ class PedidoRest {
     if (response.statusCode == 200) {
       return Pedido.fromJson(response.body);
       //return Boi(); PROFESSOR QUE FALOU PARA FAZER ISSO
+      print('Pedido removido com sucesso!');
     } else {
       throw Exception('Erro removido pedido: $id.');
     }

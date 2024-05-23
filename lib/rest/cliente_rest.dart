@@ -68,8 +68,12 @@ class ClienteRest {
         });
     if (response.statusCode == 200) {
       return Cliente.fromJson(response.body);
+      //print('$id Removido com sucesso!');
+      //Cliente.fromJson(response.body);
+      //print('$id Removido com sucesso!');
       //return Boi(); PROFESSOR QUE FALOU PARA FAZER ISSO
     } else {
+      print('Erro ao remover cliente $id: Status code ${response.statusCode}');
       throw Exception('Erro removido: $id.');
     }
   }

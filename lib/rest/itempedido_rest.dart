@@ -68,7 +68,6 @@ class ItempedidoRest {
         });
     if (response.statusCode == 200) {
       return Itempedido.fromJson(response.body);
-      //return Boi(); PROFESSOR QUE FALOU PARA FAZER ISSO
     } else {
       throw Exception('Erro removido:/$id.');
     }
