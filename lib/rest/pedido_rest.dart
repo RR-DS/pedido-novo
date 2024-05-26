@@ -67,6 +67,7 @@ class PedidoRest {
           'Content-Type': 'application/json; charset=UTF-8',
         });
     if (response.statusCode == 200) {
+      //return Pedido('Itempedido removido com sucesso!');
       return Pedido.fromJson(response.body);
       //return Boi(); PROFESSOR QUE FALOU PARA FAZER ISSO
       //print('Pedido removido com sucesso!');
@@ -76,3 +77,21 @@ class PedidoRest {
     }
   }
 }
+
+
+ /* Future<Pedido> remover(int id) async {
+    final http.Response response = await http.delete(
+      Uri.http(Api.endpoint, '/clientes/pedidos/itenspedidos/$id'),
+      headers: <String, String>{
+        'Content-Item': 'application/json; charset=UTF-8',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      return 'Itempedido removido com sucesso!'; // Return success message
+    } else {
+      // Handle errors and return informative message
+      return 'Erro ao remover itempedido $id: Status code ${response.statusCode}';
+    }
+  }
+}*/
