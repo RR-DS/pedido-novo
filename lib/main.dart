@@ -148,8 +148,10 @@ Widget _createHeader() {
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
           color: Colors.yellowAccent,
-          image: DecorationImage(fit: BoxFit.fitHeight, image: AssetImage(''))),
-      // image: AssetImage('pacote da Imagem.png'))),
+          image: DecorationImage(
+              fit: BoxFit.fitHeight,
+              image: AssetImage('assets/images/pets2pet.png'))),
+      // image: AssetImage('assets/images/pets2pet.png'))),
       child: Stack(children: <Widget>[
         Positioned(
             bottom: 12.0,
