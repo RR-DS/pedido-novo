@@ -26,12 +26,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pedido System',
+      title: 'Módulo de Pedidos',
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
           useMaterial3: true,
           primarySwatch: Colors.yellow),
-      home: MyHomePage(title: 'Pedido System'),
+      home: MyHomePage(title: 'Módulo de Pedidos'),
       routes: {
         Routes.edit: (context) => EditarClientePage(),
         Routes.insert: (context) => InserirClientePage(),
@@ -147,7 +147,7 @@ Widget _createHeader() {
       margin: EdgeInsets.zero,
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
-          color: Colors.yellowAccent,
+          color: Colors.white,
           image: DecorationImage(
               fit: BoxFit.fitHeight,
               image: AssetImage('assets/images/pets2pet.png'))),
@@ -156,7 +156,7 @@ Widget _createHeader() {
         Positioned(
             bottom: 12.0,
             left: 16.0,
-            child: Text("Cadastro de Pedidos",
+            child: Text("Módulo de Pedidos",
                 style: TextStyle(
                     color: Colors.brown,
                     fontSize: 30.0,
